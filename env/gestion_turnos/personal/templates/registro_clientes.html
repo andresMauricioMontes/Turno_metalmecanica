@@ -1,28 +1,42 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registrar Clientes</title>
+    <!-- Declaración del tipo de documento y configuración de idioma en español -->
+    <meta charset="UTF-8"> <!-- Establece la codificación de caracteres como UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configura la vista responsiva para dispositivos móviles -->
+    <title>Registrar Clientes</title> <!-- Título que aparece en la pestaña del navegador -->
+
+    <!-- Enlace a la librería CSS de Bootstrap para diseño responsivo y estilizado -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body class="bg-light">
+    <!-- Cuerpo de la página con fondo claro definido por la clase bg-light -->
     <div class="container mt-5">
-        <h1 class="text-center mb-4">Registrar Clientes</h1>
-        <form method="post" class="bg-white p-4 rounded shadow-sm">
-            {% csrf_token %}
+        <!-- Contenedor principal con margen superior para centrado vertical -->
+        <h1 class="text-center mb-4" >Registrar Clientes</h1> <!-- Título centrado con margen inferior -->
+        
+        <!-- Formulario para registrar clientes -->
+        <form method="post" class="bg-white p-4" rounded shadow-sm">
+            {% csrf_token %} <!-- Token de seguridad para proteger contra ataques CSRF (Django específico) -->
+
+            <!-- Campo de texto para ingresar el nombre de la empresa -->
             <div class="mb-3">
-                <label for="nombre" class="form-label">Nombre de la empresa:</label>
-                <input type="text" class="form-control" id="nombre" name="nombre">
+                <label for="nombre" class="form-label">Nombre de la empresa:</label> <!-- Etiqueta para el campo -->
+                <input type="text" id="nombre" name="nombre"class="form-control" placeholder="Ingrese el nombre de la empresa"> <!-- Campo de entrada con estilo de Bootstrap -->
             </div>
+
+            <!-- Campo de texto para ingresar el tipo de empresa -->
             <div class="mb-3">
-                <label for="tipo_empresa" class="form-label">Tipo de Empresa:</label>
-                <input type="text" class="form-control" id="tipo_empresa" name="tipo_empresa">
+                <label for="tipo_empresa" class="form-label"> Tipo de Empresa:</label> <!-- Etiqueta para el campo -->
+                <input type="text" id="tipo_empresa" name="tipo_empresa"class="form-control" placeholder="Ingrese el tipo de empresa"> <!-- Campo de entrada con estilo de Bootstrap -->
             </div>
-            <button type="submit" class="btn btn-primary w-100">Registrar</button>
+
+            <!-- Botón para enviar el formulario -->
+            <button type="submit" class="btn btn-primary w-100">Registrar</button> <!-- Botón con estilo primario y ancho completo -->
         </form>
     </div>
-    <!-- Bootstrap JS -->
+
+    <!-- Importación de Bootstrap JS para funcionalidades dinámicas como modales o alertas -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
