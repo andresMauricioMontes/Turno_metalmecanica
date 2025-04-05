@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Turnos Asignados</h2>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Empleado</th>
+                <th>Fecha</th>
+                <th>Hora de inicio</th>
+                <th>Hora de fin</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for turno in turnos %}
+            <tr>
+                <td>{{ turno.empleado.nombre }}</td>
+                <td>{{ turno.fecha }}</td>
+                <td>{{ turno.hora_inicio }}</td>
+                <td>{{ turno.hora_fin }}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="4">No hay turnos asignados.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
